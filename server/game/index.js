@@ -1,10 +1,6 @@
 const { createServer } = require('net');
 const { changeMap, changeMap2, collectOre, finalizePacket, removeOre, sendMessage, spawnBonusBox, spawnOre } = require('./packets/client.js');
 
-const POLICY_REQUEST_HEADER = '<policy-file-request/>\0';
-const POLICY_RESPONSE = "<?xml version=\"1.0\"?><cross-domain-policy xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:noNamespaceSchemaLocation=\"http://www.adobe.com/xml/schemas/PolicyFileSocket.xsd\"><allow-access-from domain=\"*\" to-ports=\"*\" secure=\"false\" /><site-control permitted-cross-domain-policies=\"all\" /></cross-domain-policy>\0";
-
-
 const gameServer = createServer((socket) => {
     socket.setEncoding('utf8');
 
@@ -25,9 +21,9 @@ const gameServer = createServer((socket) => {
                 socket.write("0|A|ADM|CLI|1\0")
                 // socket.write("0|I|1|Moonsteroid|53|540|120000|120000|256000|256000|3|10|1000|10000|3|3|3|20000|400|3|1|1246000|15620|10|1205010|1205|0|20|SA|3|0|0|50|25\0")
                 // socket.write("RDY|I|1|Moonsteroid|53|540|120000|120000|256000|256000|3|10|1000|10000|3|3|3|20000|400|3|1|1246000|15620|10|1205010|1205|0|20|SA|3|0|0|50|25\0")
-                
+
                 // socket.write("0|A|BS|10|10|10|10\0") // boosters
-                
+
                 // socket.write("0|n|e|1|3/3-10,0-11;0-12,0/4-10,0-25,0-25,0-11,0/3-25,1-24,2-23,0\0")
                 // socket.write(changeMap(16))
                 // socket.write(spawnOre(17, 1, 1000, 1000))
@@ -35,7 +31,7 @@ const gameServer = createServer((socket) => {
                 // socket.write(spawnOre(5, 20, 1030, 1000, 1))
                 // socket.write(spawnBonusBox(10, 2, 1100, 1100))
                 // socket.write(spawnBonusBox(20, 0, 1250, 1100))
-                socket.write(sendMessage("MOONSTEROID wants a cigar!"))
+                socket.write(sendMessage("MOONSTEROID needs cigars"))
                 break
 
             case '1': // move

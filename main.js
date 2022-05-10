@@ -27,6 +27,8 @@ app.commandLine.appendSwitch(
 );
 
 app.on("ready", () => {
+
+  // Start the servers
   web.listen(config.get("web.port"))
   policyServer.listen(config.get("policy.port"))
   gameServer.listen(config.get("game.port"))
@@ -36,15 +38,16 @@ app.on("ready", () => {
     height: 700,
     webPreferences: {
       plugins: true,
+      nodeIntegration: true
     },
   });
   mainWindow.loadURL(`http://${config.get("client.host")}:${config.get("client.port")}/`);
-  // win.webContents.openDevTools();
+  // mainWindow.webContents.openDevTools();
   mainWindow.focus();
 });
 
 app.on("window-all-closed", function () {
-  if(process.platform !== 'darwin') app.quit()
+  if (process.platform !== 'darwin') app.quit()
 });
 
 app.on("activate", function () {

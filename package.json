@@ -1,20 +1,13 @@
 {
-  "name": "darkorbit-remix-classic",
+  "name": "standalone-offline-darkorbit-client",
   "version": "1.0.0",
-  "description": "DarkOrbit Remix Classic",
-  "main": "app.js",
+  "description": "Standalone Offline Darkorbit Client",
+  "main": "main.js",
   "scripts": {
-    "start": "electron-forge start",
-    "package": "electron-forge package",
-    "make": "electron-forge make"
+    "start": "electron ."
   },
   "author": "Moonsteroid",
   "devDependencies": {
-    "@electron-forge/cli": "^6.0.0-beta.63",
-    "@electron-forge/maker-deb": "^6.0.0-beta.63",
-    "@electron-forge/maker-rpm": "^6.0.0-beta.63",
-    "@electron-forge/maker-squirrel": "^6.0.0-beta.63",
-    "@electron-forge/maker-zip": "^6.0.0-beta.63",
     "electron": "11.3.0",
     "electron-reload": "1.5.0",
     "nodemon": "^2.0.16"
@@ -23,32 +16,5 @@
     "config": "^3.3.7",
     "electron-squirrel-startup": "^1.0.0",
     "express": "^4.18.1"
-  },
-  "config": {
-    "forge": {
-      "packagerConfig": {},
-      "makers": [
-        {
-          "name": "@electron-forge/maker-squirrel",
-          "config": {
-            "name": "darkorbit_remix_classic"
-          }
-        },
-        {
-          "name": "@electron-forge/maker-zip",
-          "platforms": [
-            "darwin"
-          ]
-        },
-        {
-          "name": "@electron-forge/maker-deb",
-          "config": {}
-        },
-        {
-          "name": "@electron-forge/maker-rpm",
-          "config": {}
-        }
-      ]
-    }
   }
 }
