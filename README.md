@@ -14,3 +14,6 @@ Feel free to do whatever you want with it :)
 # Credits
 - https://github.com/MuffinMario/Old-Darkorbit-Project-2009-Cpp
 - https://github.com/IhanSadiq/dops_client
+
+# Preview
+![screenshots/client.png](screenshots/client.png)
