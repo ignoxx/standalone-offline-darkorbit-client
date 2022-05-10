@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ro-ro" lang="ro-ro">
+  <html class="no-js" lang="es">
+    <head>
+      <!-- Meta -->
+      <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+      <title>DarkOrbit Remix Classic</title>
+
+      <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+      <script type="text/javascript" src="js/jquery-1.4.4.js"></script>
+      <script type="text/javascript" src="js/jquery.flashembed.js"></script>
+      <link rel="stylesheet" href="css/index.css" />
+    </head>
+
+    <body>
+      <div id="container" align="center"></div>
+
+      <script type="text/javascript">
+        function onFailFlashembed() {
+          var inner_html =
+            '<div class="flashFailHead">Get the Adobe Flash Player</div>\n\
+				     <div class="flashFailHeadText">In order to play you need the latest version of Flash Player. Just install it to start playing!\n\
+				     <div class="flashFailHeadLink" style="cursor: pointer">Download the Flash Player here for free: <a href="http://www.adobe.com/go/getflashplayer" style="text-decoration: underline; color:#A0A0A0;">Download Flash Player<\/a></div></div>';
+
+          $("#container").innerHTML = inner_html;
+        }
+
+        function expressInstallCallback(info) {
+          // possible values for info: loadTimeOut|Cancelled|Failed
+          onFailFlashembed();
+        }
+
+        function expressInstallCallback(info) {
+          // possible values for info: loadTimeOut|Cancelled|Failed
+          onFailFlashembed();
+        }
+
+        jQuery(document).ready(function () {
+          flashembed(
+            "container",
+            {
+              src: "swf_global/spacemap.swf",
+              version: [10, 0],
+              expressInstall: "swf_global/expressInstall.swf",
+              width: "820",
+              height: "650",
+              wmode: "window",
+              id: "DFlash",
+            },
+            {
+              lang: "en",
+              userID: 1,
+              factionID: 1,
+              g_userName: "arbitrary name that has no meaning",
+              mainMovie: "", //LEAVE IT EMPTY
+              cdn: "http://127.0.0.1:3000/", //CDN FOR REDIRECT
+              allowedScriptAccess: "always",
+              allowNetworking: "true",
+              sid: "SESSION_ID_42", // THESE DATABASE ENTRIES SHOULD BE INACCESSIBLE ON RELEASE
+              mapID: 1,
+            }
+          );
+        });
+      </script>
+    </body>
+  </html>
+</html>

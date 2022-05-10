@@ -1,0 +1,5 @@
+<cross-domain-policy>
+	<site-control permitted-cross-domain-policies="all"/>
+	<allow-access-from domain="127.0.0.1" secure="false"/>
+	<allow-http-request-headers-from domain="127.0.0.1" headers="*" secure="false"/>
+</cross-domain-policy>
